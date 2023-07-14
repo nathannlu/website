@@ -15,6 +15,7 @@ export default function Home() {
               1: <Slide1 />,
               2: <Slide2 />,
               3: <Slide3 />,
+              4: <Slide4 />,
             }[slide]
           }
         </div>
@@ -30,7 +31,7 @@ export default function Home() {
             }}
             onClick={() =>
               setSlide((prevState) => {
-                if (prevState == 3) {
+                if (prevState == 4) {
                   return 0
                 }
                 return prevState + 1
@@ -125,6 +126,24 @@ const Slide3 = () => {
           , serving over 14,700 users in creating NFT collections
         </p>
         <p>[2022]</p>
+      </div>
+      {/*
+					<div className="w-1/4">
+						<img alt="dgraph" layout="fill" src="https://uploads-ssl.webflow.com/61a5732dd539a17ad13b60fb/61d34ab7c783ea4e08774112_combination-primary-logo.png" />
+					</div>
+					*/}
+    </div>
+  )
+}
+
+const Slide4 = () => {
+  return (
+    <div className="mb-8 flex flex-wrap">
+      <div className="w-1/2">
+        <p>
+          broke & unemployed
+        </p>
+        <p>[2023]</p>
       </div>
       {/*
 					<div className="w-1/4">
