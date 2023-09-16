@@ -16,14 +16,14 @@ export default function Home() {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="container mx-auto mt-24">
-        <h1 className="text-5xl mb-6">
+      <div className="mt-24">
+        <h1 className="text-6xl mb-6">
           Nathan writes code
         </h1>
-        <p className="mb-4">
+        <p className="text-gray-600 mb-4">
           In my spare time, I enjoy kickboxing and wrestling.
         </p>
-        <p>
+        <p className="text-gray-600">
           I started my software career freelancing before landing a job at a distributed database company, and eventually founding my own web3 startup
         </p>
 
@@ -55,7 +55,7 @@ export default function Home() {
                 )}
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-1">
+                <h3 className="text-2xl mb-1">
                   {project.title} <span className="text-gray-600 font-normal">— {project.subtitle}</span>
                 </h3>
                 <p className="text-gray-800">

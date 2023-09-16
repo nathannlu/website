@@ -25,10 +25,10 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        sans: ['Lota Grotesque', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.blue,
         gray: colors.neutral,
       },
       typography: (theme) => ({
@@ -58,6 +58,10 @@ module.exports = {
             },
             'h4,h5,h6': {
               color: theme('colors.gray.900'),
+            },
+            p: {
+              fontSize: '20px',
+              color: theme('colors.gray.600'),
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
@@ -126,6 +130,10 @@ module.exports = {
             },
             'h4,h5,h6': {
               color: theme('colors.gray.100'),
+            },
+            p: {
+              fontSize: '20px',
+              color: theme('colors.gray.600'),
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),

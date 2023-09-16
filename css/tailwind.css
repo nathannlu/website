@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'Lota Grotesque';
+  src: url('/static/fonts/LotaGrotesque-Regular.woff2') format('woff2'); /* Specify the path to your WOFF2 font in the public folder */
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lota Grotesque';
+  src: url('/static/fonts/LotaGrotesque-SemiBold.woff2') format('woff2'); /* Specify the path to your WOFF2 font in the public folder */
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lota Grotesque';
+  src: url('/static/fonts/LotaGrotesque-Bold.woff2') format('woff2'); /* Specify the path to your WOFF2 font in the public folder */
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  letter-spacing: -0.025em;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.33;
+}
+
+
 .task-list-item::before {
   @apply hidden;
 }
