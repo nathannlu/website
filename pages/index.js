@@ -1,12 +1,75 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+
+
+const projects = [
+  { 
+    title: 'Ambition',
+    subtitle: 'NFT maker',
+    description: 'Led a team of 5 to help over 20,000 creators launch their NFTs',
+    src: '/static/videos/ambition_preview.mp4',
+    backupSrc: '/static/images/ambition_preview.png',
+    video: true,
+    link: '/projects/ambition',
+  },
+  { 
+    title: 'Dgraph',
+    subtitle: 'Distributed graph database',
+    description: 'Created and maintained the website',
+    src: '/static/images/dgraph_preview.png',
+    link: '/projects/draph',
+  },
+]
+
 
 export default function Home() {
   const [slide, setSlide] = useState(0)
   return (
     <div className="container mx-auto mt-24">
+      <h1 className="text-5xl mb-6">
+        Nathan writes code
+      </h1>
+      <p className="mb-4">
+        In my spare time, I enjoy kickboxing and wrestling.
+      </p>
+      <p>
+        I started my software career freelancing before landing a job at a distributed database company, and eventually founding my own web3 startup
+      </p>
 
+      <section className="mt-24">
+        <h2 className="text-4xl mb-8">
+          Work highlights
+        </h2>
+
+        {projects.map((project, i) => (
+          <Link href={project.link}>
+          <div key={i} className="mb-12 cursor-pointer">
+            <div className="relative bg-blue-500 mb-4 rounded-md overflow-hidden" style={{height:'480px'}}>
+              {project.video ? (
+                <video className="absolute w-full h-full" style={{objectFit: 'cover'}} autoPlay muted loop playsInline poster={project.backupSrc}>
+                  <source src={project.src} type="video/mp4" />
+                </video>
+              ) : (
+                <img className="absolute w-full h-full" style={{objectFit: 'cover'}} src={project.src} />
+              )}
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-1">
+                {project.title} <span className="text-gray-600 font-normal">— {project.subtitle}</span>
+              </h3>
+              <p className="text-gray-800">
+                {project.description}
+              </p>
+            </div>
+          </div>
+          </Link>
+        ))}
+
+      </section>
+
+      {/*
       <section>
         <div style={{ height: '120px' }}>
           {
@@ -42,6 +105,7 @@ export default function Home() {
           </button>
         </div>
       </section>
+      */}
     </div>
   )
 }

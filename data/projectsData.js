@@ -1,3 +1,4 @@
+/*
 const projectsData = [
   {
     title: 'A Search Engine',
@@ -18,3 +19,4 @@ const projectsData = [
 ]
 
 export default projectsData
+*/

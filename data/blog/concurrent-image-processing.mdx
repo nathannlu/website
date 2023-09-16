@@ -1,0 +1,51 @@
+---
+title: Performant bulk image composite of NFT artwork
+date: '2023-01-28'
+tags: ['engineering']
+draft: false
+summary: In this article, I discuss how I redesigned one of Ambition's core services
+---
+
+
+why is it important?
+
+- in the early days of ambition, this accounted for majority of our revenue
+
+the usecase/background
+
+- nfts are unique tokens usually paired with artwork
+- users prepare the artwork in layers, and feed it through software to composite the layers on top of eachother to form unique images
+- this was a core offering of ambition’s business
+- the original generator was built in 2 weeks back in december. was meant to launch quickly to test customer interest and was not built to scale. we eventually reached a stage where we had over 100 daily active users and problems started to arise.
+
+the problem
+
+- users would use the app and it would white screen crash
+- it was slow
+- the zip breaks
+
+- we started outlining all the issues with the generator
+    - ran on client browser side — this was extremely slow because it used javascript to render
+        - it uses node canvas and draws on canvas. after every image composition it would turn the canvas into a blob and save it into jszip. the jszip would grow tremendous in size and cause the browser to run out of memory for collections either large in image size or have a lot of images
+        - this worked fine for smaller collections, but larger ones crashed with white screen.
+    - ran into memory issues with large image collections
+        - either during generation loop or zipping it would fill the javascript heap up
+
+- to address these issues:
+    - javascript slow rendering → generate the images in python
+        - i chose python because i can turn the images into matrices, and if i run on gpu it will make these operations extremely fast
+            - (algorithm to generate images ended up being 15s to composite 10,000 2500x2500px images. normally this would take up to 5 hours to generate on client side react… and it would crash near the end too)
+    - memory issues → move generation to backend. the image generation algorithm ended up being hosted in nividia A10G cuda gpu containers, while the zipping are in cpu containers.
+        - the distributed containers actually posed a problem too. because i was compositing the images in bulk (100 at a time), the list of matrices that represented the images were huge… imagine a list of matrices with shape (2500,2500,3). this posed problems when it was being sent from gpu container to the cpu zipping container and would take very long to send across servers (for reference, image generation of 100 images was 1s and the sending process took 40s). i ended up optimizing this by compressing the list of matrices with zlib before sending it over the network. this improved the overall time by 2x. sending it over network took 10s and 8s was added to the image generation (41s→19s per 100 images)
+        - in order to support large collections of sizes over 10000, we couldnt generate the images sequentially because a size of 10,000 matrices with (2500,2500,3) caused memory issues with python. in order to support these larger collections, i implemented concurrent processing. so i would have a producer that ran on gpu and is responsible for generating lists of image matrices. this producer put the matrices on a queue, and a consumer that ran on cpu would be responsible for popping these messages off and adding them into a zip buffer.
+        - this distributed concurrent processing also allows for faster generations too. the rough estimate for the producer is that it is 2x faster than the consumer at the moment. in the case of large collections, if it is generated sequentially without concurrent processing, it would take longer, but because the matrix generator and file zipper are in different containers, they can overlap and run while the other is busy.
+        - the distributed gpu and cpu containers are built on top of Modal, a cloud computing infrastructure company
+
+- some issues with this system
+    - the producer generates faster than the consumer, the queue ramps up quite a lot in data and in situations where multiple 10,000 collections are generated at the same time can cause memory issues. though our userbase is not at that scale yet.
+    - there should be room for improvement with the consumer zipping container… there is a lot of potential to make the system faster if this piece of the technology is made more efficient.
+
+conclusion
+
+- we are able to improve the speed of generating on our site by an incredible degree.
+- generator is now more robust (will not crash), and will work at our current scale and support reasonable future growth.
