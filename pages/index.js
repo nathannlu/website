@@ -33,7 +33,7 @@ export default function Home() {
           </h2>
 
           {projectsData.map((project, i) => (
-            <Link key={i} href={project.title}>
+            <Link key={project.title} href={project.link}>
             <div className="mb-12 cursor-pointer">
               <div className="relative bg-blue-500 mb-4 rounded-md overflow-hidden" style={{height:'480px'}}>
                 {project.video ? (
@@ -42,12 +42,13 @@ export default function Home() {
                     className="absolute w-full h-full"
                     poster={project.backupSrc}
                     style={{objectFit: 'cover'}}
+                    preload="auto"
                     autoPlay 
                     muted
                     loop
                     playsInline
                   >
-                    <source preload="auto" src={project.src} type="video/mp4" />
+                    <source src={project.src} type="video/mp4" />
                   </video>
                 ) : (
                   <img className="absolute w-full h-full" style={{objectFit: 'cover'}} src={project.src} />

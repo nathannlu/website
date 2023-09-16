@@ -24,6 +24,7 @@ const projectsData = [
     title: 'Ambition',
     subtitle: 'NFT maker',
     description: 'Led a team of 5 to help over 20,000 creators launch their NFTs',
+    //src: 'https://ucarecdn.com/696189d5-5394-4521-b928-ddbbe6312545/',
     src: '/static/videos/ambition_preview.mp4',
     backupSrc: '/static/images/ambition_preview.png',
     video: true,
