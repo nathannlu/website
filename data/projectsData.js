@@ -17,6 +17,25 @@ const projectsData = [
     href: '/blog/the-time-machine',
   },
 ]
+*/
+
+const projectsData = [
+  { 
+    title: 'Ambition',
+    subtitle: 'NFT maker',
+    description: 'Led a team of 5 to help over 20,000 creators launch their NFTs',
+    src: '/static/videos/ambition_preview.mp4',
+    backupSrc: '/static/images/ambition_preview.png',
+    video: true,
+    link: '/projects/ambition',
+  },
+  { 
+    title: 'Dgraph',
+    subtitle: 'Distributed graph database',
+    description: 'Created and maintained the website',
+    src: '/static/images/dgraph_preview.png',
+    link: '/projects/draph',
+  },
+]
 
 export default projectsData
-*/

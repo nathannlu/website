@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import projectsData from '@/data/projectsData'
 
 
 const projects = [
@@ -43,7 +44,7 @@ export default function Home() {
           Work highlights
         </h2>
 
-        {projects.map((project, i) => (
+        {projectsData.map((project, i) => (
           <Link href={project.link}>
           <div key={i} className="mb-12 cursor-pointer">
             <div className="relative bg-blue-500 mb-4 rounded-md overflow-hidden" style={{height:'480px'}}>
