@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,6 +7,12 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 
 export default function Home() {
+  const videoRef = useRef()
+
+  useEffect(() => {
+    videoRef.current.play()
+  },[videoRef])
+
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -31,8 +37,17 @@ export default function Home() {
             <div className="mb-12 cursor-pointer">
               <div className="relative bg-blue-500 mb-4 rounded-md overflow-hidden" style={{height:'480px'}}>
                 {project.video ? (
-                  <video className="absolute w-full h-full" style={{objectFit: 'cover'}} autoPlay muted loop playsInline poster={project.backupSrc}>
-                    <source src={project.src} type="video/mp4" />
+                  <video 
+                    ref={videoRef}
+                    className="absolute w-full h-full"
+                    poster={project.backupSrc}
+                    style={{objectFit: 'cover'}}
+                    autoPlay 
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source preload="auto" src={project.src} type="video/mp4" />
                   </video>
                 ) : (
                   <img className="absolute w-full h-full" style={{objectFit: 'cover'}} src={project.src} />
