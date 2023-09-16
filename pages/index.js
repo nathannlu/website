@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="mt-24">
+      <div className="mt-16">
         <h1 className="text-6xl mb-6">
           Nathan writes code
         </h1>
