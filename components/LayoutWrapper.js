@@ -6,6 +6,8 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -13,13 +15,26 @@ const LayoutWrapper = ({ children }) => {
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
           <div>
-            <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
-                <div className="font-bold text-xl mr-3">
-									Nathan Lu
-                </div>
+                <Link href="/" aria-label={siteMetadata.headerTitle}>
+                  <div className="font-bold text-xl mr-3">
+                    Nathan Lu
+                  </div>
+                </Link>
+                <Link href="https://github.com/nathannlu" aria-label={siteMetadata.headerTitle}>
+                  <div className="font-bold text-xl mr-3">
+                    <AiFillGithub />
+                  </div>
+                </Link>
+                <Link href="https://www.linkedin.com/in/nathanlu/" aria-label={siteMetadata.headerTitle}>
+                  <div className="font-bold text-xl mr-3">
+                    <AiFillLinkedin />
+                  </div>
+                </Link>
+
               </div>
-            </Link>
+
+
           </div>
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block">
