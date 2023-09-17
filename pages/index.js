@@ -66,6 +66,10 @@ export default function Home() {
             </div>
             </a>
           ))}
+
+          <span className="link">
+            View more
+          </span>
         </section>
       </div>
     </>

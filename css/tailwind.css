@@ -71,8 +71,35 @@ p {
 	background-color: #042825;
 	transition: all .4s cubic-bezier(.215,.61,.355,1);	
 }
-
 .project-card:hover .project-card__title:after {
+	right: 0;
+}
+
+.link { 
+  font-size: 18px;
+  padding-bottom: 2px;
+	font-weight: bold;
+	position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.link:after,
+.link:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 1px;
+  z-index: 0;
+	background-color: rgba(4,40,37,.2);	
+}
+.link:after {
+	right: 100%;
+	background-color: #042825;
+	transition: all .4s cubic-bezier(.215,.61,.355,1);	
+}
+.link:hover::after {
 	right: 0;
 }
 
