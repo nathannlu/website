@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
+import projectsData from '@/data/workData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 //import ProjectCard from '@/components/Portfolio/ProjectCard';
@@ -11,8 +11,8 @@ export default function Projects() {
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
       <div>
         <div className="pt-6">
-            <h1 className="text-6xl mb-6">
-            Projects
+          <h1 className="text-6xl mb-6">
+            Work
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {/*
