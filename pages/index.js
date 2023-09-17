@@ -67,9 +67,11 @@ export default function Home() {
             </a>
           ))}
 
+          <Link href="/work">
           <span className="link">
             View more
           </span>
+          </Link>
         </section>
       </div>
     </>
