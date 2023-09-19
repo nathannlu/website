@@ -25,7 +25,7 @@ export default function Home() {
         </Paragraph>
 
 
-        <div className="flex flex-wrap mt-18 md:mt-36">
+        <div className="flex flex-wrap mt-16 md:mt-36">
           <div className="md:w-1/2 md:pr-8">
             <h2 className="text-2xl md:text-3xl mb-4">
               Why you should hire me
