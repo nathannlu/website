@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           
           <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
-            <iframe width="100%" height="320" src="https://www.youtube.com/embed/jJi8uYyU9xA" title="Why you should hire me | Nathan Lu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="100%" height="320" src="https://www.youtube.com/embed/jJi8uYyU9xA" title="Why you should hire me | Nathan Lu" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
           </div>
         </div>
 

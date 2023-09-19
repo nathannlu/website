@@ -28,7 +28,7 @@ const projectsData = [
     src: '/static/videos/ambition_preview.mp4',
     backupSrc: '/static/images/ambition_preview.png',
     video: true,
-    link: 'https://ambition.so/',
+    link: '/work/ambition',
   },
   { 
     title: 'Dgraph',
