@@ -35,7 +35,7 @@ const projectsData = [
     subtitle: 'Distributed graph database',
     description: 'Created, optimized, and managed the company website and blog',
     src: '/static/images/dgraph_preview.png',
-    link: 'https://dgraph.io/',
+    link: '/work/dgraph',
   },
   { 
     title: 'Hostgenius',
