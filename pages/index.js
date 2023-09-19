@@ -13,8 +13,7 @@ export default function Home() {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="mt-8 md:mt-16">
-
+      <div className="mt-8 md:mt-24">
         <h1 className="text-5xl md:text-6xl mb-6">
           I build websites, robust web apps, and drive growth
         </h1>
@@ -25,9 +24,26 @@ export default function Home() {
           In my spare time, I enjoy kickboxing, wrestling, and studying history.
         </Paragraph>
 
+
+        <div className="flex flex-wrap mt-16 md:mt-32">
+          <div className="md:w-1/2 md:pr-8">
+            <h2 className="text-2xl md:text-3xl mb-4">
+              Why you should hire me
+            </h2>
+            <Paragraph>
+              Here's a 1-minute video about me – hope it would persuade you to spend more than 2 minutes reviewing my portfolio.
+            </Paragraph>
+
+          </div>
+          
+          <div className="md:w-1/2 rounded-lg overflow-hidden">
+            <iframe width="100%" height="320" src="https://www.youtube.com/embed/jJi8uYyU9xA" title="Why you should hire me | Nathan Lu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
         <section className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl mb-8">
-            Work highlights
+            Work I am proud of
           </h2>
 
           {projectsData.slice(0,3).map((project, i) => (
