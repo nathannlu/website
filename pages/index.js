@@ -25,7 +25,7 @@ export default function Home() {
         </Paragraph>
 
 
-        <div className="flex flex-wrap mt-16 md:mt-32">
+        <div className="flex flex-wrap mt-18 md:mt-36">
           <div className="md:w-1/2 md:pr-8">
             <h2 className="text-2xl md:text-3xl mb-4">
               Why you should hire me
@@ -36,7 +36,7 @@ export default function Home() {
 
           </div>
           
-          <div className="md:w-1/2 rounded-lg overflow-hidden">
+          <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
             <iframe width="100%" height="320" src="https://www.youtube.com/embed/jJi8uYyU9xA" title="Why you should hire me | Nathan Lu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
