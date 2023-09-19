@@ -202,8 +202,7 @@ const HostGenius = () => {
 						</h2>
 
 						<a
-							className="text-black bg-white uppercase rounded shadow px-16 py-8 inline-block" 
-							style={{fontSize: '1.4rem'}}
+							className="text-black bg-white uppercase rounded shadow px-8 py-4 inline-block" 
 							href="https://www.hostgenius.ca/" 
 							target="_blank"
 						>
