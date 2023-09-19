@@ -9,13 +9,19 @@ import Head from 'next/head'
 
 import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
-import LayoutWrapper from '@/components/LayoutWrapper'
+import LayoutWrapper, { Navbar } from '@/components/LayoutWrapper'
+import SectionContainer from '@/components/SectionContainer'
 import { ClientReload } from '@/components/ClientReload'
+import { useRouter } from 'next/router';
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
+  const isProjectPage = router.pathname.startsWith('/work/')
+
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
@@ -23,9 +29,18 @@ export default function App({ Component, pageProps }) {
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
-      <LayoutWrapper>
-        <Component {...pageProps} />
-      </LayoutWrapper>
+      {isProjectPage ? (
+        <>
+          <SectionContainer>
+            <Navbar />
+          </SectionContainer>
+          <Component {...pageProps} />
+        </>
+      ) : (
+        <LayoutWrapper>
+          <Component {...pageProps} />
+        </LayoutWrapper>
+      )}
     </ThemeProvider>
   )
 }

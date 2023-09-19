@@ -25,23 +25,22 @@ export default function Home() {
           In my spare time, I enjoy kickboxing, wrestling, and studying history.
         </Paragraph>
 
-
         <section className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl mb-8">
             Work highlights
           </h2>
 
           {projectsData.slice(0,3).map((project, i) => (
-            <a target="_blank" key={project.title} href={project.link}>
-              <ProjectCard 
-                video={project.video} 
-                src={project.src} 
-                backupSrc={project.backupSrc} 
-                title={project.title} 
-                description={project.description} 
-                subtitle={project.subtitle} 
-              />
-            </a>
+            <ProjectCard 
+              key={project.title}
+              href={project.link}
+              video={project.video} 
+              src={project.src} 
+              backupSrc={project.backupSrc} 
+              title={project.title} 
+              description={project.description} 
+              subtitle={project.subtitle} 
+            />
           ))}
 
           <Link href="/work">

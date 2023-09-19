@@ -38,19 +38,19 @@ const projectsData = [
     link: 'https://dgraph.io/',
   },
   { 
+    title: 'Hostgenius',
+    subtitle: 'Rental management firm',
+    description: "Designing and developing for one of Vancouver's largest short-term rental management firm",
+    src: '/static/images/hg_preview.png',
+    link: '/work/hostgenius',
+  },
+  { 
     title: 'Castle Labs',
     subtitle: 'Adobe award winning design studio',
     description: 'Built websites for clients',
     src: '/static/videos/castle_preview.mp4',
     video: true,
     link: 'https://dribbble.com/castlelab',
-  },
-  { 
-    title: 'Hostgenius',
-    subtitle: 'Rental management firm',
-    description: "Designing and developing for one of Vancouver's largest short-term rental management firm",
-    src: '/static/images/hg_preview.png',
-    link: 'https://www.hostgenius.ca/',
   },
   { 
     title: 'Teamtown',

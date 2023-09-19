@@ -24,8 +24,9 @@ export default function Projects() {
 
         <div className=" py-12">
             {projectsData.map((project, i) => (
-              <a target="_blank" key={project.title} href={project.link}>
               <ProjectCard 
+                key={project.title}
+                href={project.link}
                 video={project.video} 
                 src={project.src} 
                 backupSrc={project.backupSrc} 
@@ -33,7 +34,6 @@ export default function Projects() {
                 description={project.description} 
                 subtitle={project.subtitle} 
               />
-              </a>
             ))}
         </div>
       </div>

@@ -1,7 +1,9 @@
 import { Paragraph } from '@/components/Paragraph';
+import Link from '@/components/Link';
 
-export const ProjectCard = ({ video, src, backupSrc, title, subtitle, description }) => {
+export const ProjectCard = ({ video, src, backupSrc, title, subtitle, description, href }) => {
   return (
+              <Link key={title} href={href}>
     <div className="mb-12 cursor-pointer project-card">
       <div className="relative bg-blue-500 mb-4 rounded-md overflow-hidden" style={{height:'480px'}}>
         {video ? (
@@ -30,5 +32,6 @@ export const ProjectCard = ({ video, src, backupSrc, title, subtitle, descriptio
         </Paragraph>
       </div>
     </div>
+              </Link>
   )
 }

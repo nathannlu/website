@@ -8,11 +8,8 @@ import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
-
-const LayoutWrapper = ({ children }) => {
+export const Navbar = () => {
   return (
-    <SectionContainer>
-      <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
           <div>
               <div className="flex items-center justify-between">
@@ -31,10 +28,7 @@ const LayoutWrapper = ({ children }) => {
                     <AiFillLinkedin />
                   </div>
                 </Link>
-
               </div>
-
-
           </div>
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block">
@@ -54,6 +48,15 @@ const LayoutWrapper = ({ children }) => {
             <MobileNav />
           </div>
         </header>
+    )
+}
+
+
+const LayoutWrapper = ({ children }) => {
+  return (
+    <SectionContainer>
+      <div className="flex h-screen flex-col justify-between">
+        <Navbar />
         <main className="mb-auto">{children}</main>
         <Footer />
       </div>
