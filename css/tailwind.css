@@ -26,6 +26,11 @@ body {
   letter-spacing: -0.025em;
 }
 
+
+h1 {
+  line-height: 1.11
+}
+
 p {
   font-size: 18px;
   line-height: 1.33;
@@ -62,7 +67,7 @@ p {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	height: 1px;
+	height: 2px;
 	background-color: rgba(4,40,37,.2);	
 }
 
@@ -78,7 +83,6 @@ p {
 .link { 
   font-size: 18px;
   padding-bottom: 2px;
-	font-weight: bold;
 	position: relative;
   z-index: 1;
   cursor: pointer;
@@ -90,7 +94,7 @@ p {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	height: 1px;
+	height: 2px;
   z-index: 0;
 	background-color: rgba(4,40,37,.2);	
 }

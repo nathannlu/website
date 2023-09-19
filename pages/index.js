@@ -5,65 +5,42 @@ import Link from 'next/link'
 import projectsData from '@/data/workData'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
+import { Paragraph } from '@/components/Paragraph';
+import { ProjectCard } from '@/components/ProjectCard';
 
 export default function Home() {
-  const videoRef = useRef()
-
-  useEffect(() => {
-    videoRef.current.play()
-  },[videoRef])
 
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="mt-16">
+      <div className="mt-8 md:mt-16">
 
-        <h1 className="text-4xl md:text-6xl mb-6">
-          Nathan writes code
+        <h1 className="text-5xl md:text-6xl mb-6">
+          I build websites, robust web apps, and drive growth
         </h1>
-        <p className="text-gray-600 mb-4">
-          In my spare time, I enjoy kickboxing and wrestling.
-        </p>
-        <p className="text-gray-600">
-          I started my software career freelancing before landing a job at a distributed database company, and eventually founding my own web3 startup
-        </p>
+        <Paragraph>
+          I started my software career freelancing before landing a job at a <a target="_blank" href="https://dgraph.io/" className="link">distributed database company</a>, and eventually founding my own <a target="_blank" href="https://ambition.so/" className="link">web3 startup</a>.
+        </Paragraph>
+        <Paragraph>
+          In my spare time, I enjoy kickboxing, wrestling, and studying history.
+        </Paragraph>
 
-        <section className="mt-24">
+
+        <section className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl mb-8">
             Work highlights
           </h2>
 
           {projectsData.slice(0,3).map((project, i) => (
             <a target="_blank" key={project.title} href={project.link}>
-            <div className="mb-12 cursor-pointer project-card">
-              <div className="relative bg-blue-500 mb-4 rounded-md overflow-hidden" style={{height:'480px'}}>
-                {project.video ? (
-                  <video 
-                    ref={videoRef}
-                    className="absolute w-full h-full"
-                    poster={project.backupSrc}
-                    style={{objectFit: 'cover'}}
-                    preload="auto"
-                    autoPlay 
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source src={project.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  <img className="absolute w-full h-full" style={{objectFit: 'cover'}} src={project.src} />
-                )}
-              </div>
-              <div>
-                <h3 className="text-2xl mb-1">
-                  <span className="project-card__title">{project.title}</span> <span className="text-gray-600 font-normal">— {project.subtitle}</span>
-                </h3>
-                <p className="text-gray-800">
-                  {project.description}
-                </p>
-              </div>
-            </div>
+              <ProjectCard 
+                video={project.video} 
+                src={project.src} 
+                backupSrc={project.backupSrc} 
+                title={project.title} 
+                description={project.description} 
+                subtitle={project.subtitle} 
+              />
             </a>
           ))}
 
@@ -73,6 +50,14 @@ export default function Home() {
           </span>
           </Link>
         </section>
+
+        {/*
+        <section className="mt-16 md:mt-24">
+          <h2 className="text-3xl md:text-4xl mb-8">
+            What people are saying
+          </h2>
+        </section>
+        */}
       </div>
     </>
   )
