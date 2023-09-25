@@ -6,6 +6,8 @@ import '@fontsource/inter/variable-full.css'
 
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
+import { useEffect } from 'react'
+import axios from 'axios';
 
 import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
@@ -21,6 +23,28 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   const isProjectPage = router.pathname.startsWith('/work/')
+
+  useEffect(() => {
+    // Check for query parameters on every route change
+    const handleRouteChange = (url) => {
+      const queryParams = new URLSearchParams(url.split('?')[1]);
+      const paramE = queryParams.get('e');
+      const paramId = queryParams.get('id');
+
+      if (paramE && paramId) {
+        const url = `https://artemis-sys.vercel.app/api/w?e=${paramE}&id=${paramId}`
+
+        axios.get(url).then(res=>console.log('true')).catch(err=> console.log(err))
+      }
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, []);
+
 
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
