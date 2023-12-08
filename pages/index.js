@@ -17,7 +17,7 @@ export default function Home() {
       <div className="mt-8 md:mt-24">
         <Fade triggerOnce bottom cascade damping={0.2}>
           <h1 transition={{ duration: .5, ease: 'easeOut'}} className="text-5xl md:text-6xl mb-6">
-            I build websites, robust web apps, and drive growth
+            I build software, robust web apps, and drive growth
           </h1>
           <div>
             <Paragraph>
