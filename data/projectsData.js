@@ -21,6 +21,13 @@ const projectsData = [
 
 const projectsData = [
   { 
+    title: 'My own programming language',
+    subtitle: '',
+    description: 'Recursive descent parser, compiler, and stack-based virtual machine',
+    src: 'https://images.shiksha.com/mediadata/ugcDocuments/images/wordpressImages/2020_09_5-Best-Programming-Languages-to-Learn-for-Cybersecurity-Professionals-scaled.jpg',
+    link: 'https://github.com/nathannlu/vm',
+  },
+  { 
     title: 'Bain Capital Ventures Miami tech week',
     subtitle: 'Event NFTs',
     description: 'Helped one of the leading venture capital firms launch their NFT collection for their tech week event. Created website, NFTs, and collected email addresses',
