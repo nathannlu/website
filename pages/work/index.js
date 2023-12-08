@@ -4,6 +4,7 @@ import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 import { ProjectCard } from '@/components/ProjectCard';
 import Link from '@/components/Link';
+import { Paragraph } from '@/components/Paragraph';
 //import ProjectCard from '@/components/Portfolio/ProjectCard';
 
 export default function Projects() {
@@ -15,6 +16,12 @@ export default function Projects() {
           <h1 className="text-6xl mb-6">
             Work
           </h1>
+          <div>
+            <Paragraph>
+              I have founded my own Web3 company, worked at startups, and freelanced.
+            </Paragraph>
+          </div>
+
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {/*
             Showcase your projects with a hero image (16 x 9)
