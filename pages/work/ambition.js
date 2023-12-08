@@ -98,7 +98,7 @@ const HostGenius = () => {
             <p className="mb-4">
 As a small team, creating elegant designs was a luxury that didn't directly contribute to our growth. Therefore, to expedite the release of A/B test sections, we embarked on a website redesign to streamline the process.
             </p>
-            <p>
+            <p className="mb-4">
     During this redesign, we placed a strong emphasis on optimizing performance and SEO. Consequently, we achieved significant improvements in our Google PageSpeed Insight scores.
             </p>
             <p>
