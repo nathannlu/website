@@ -29,7 +29,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="py-12">
+        <div className="grid grid-cols-1 py-12">
           {projectsData.map((project, i) => (
             <ProjectCard 
               key={project.title}
