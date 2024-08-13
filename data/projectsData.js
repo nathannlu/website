@@ -21,6 +21,13 @@ const projectsData = [
 
 const projectsData = [
   { 
+    title: 'Opensource AI cloud GPU platform',
+    subtitle: '',
+    description: 'Allow users with poor compute to run image generation models on the cloud',
+    src: 'https://private-user-images.githubusercontent.com/24965772/308785896-9181ff0a-1d27-41f3-93e7-b309ed9d533c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM1MTA3MjUsIm5iZiI6MTcyMzUxMDQyNSwicGF0aCI6Ii8yNDk2NTc3Mi8zMDg3ODU4OTYtOTE4MWZmMGEtMWQyNy00MWYzLTkzZTctYjMwOWVkOWQ1MzNjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODEzVDAwNTM0NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTRlYTdjNzk2NzI1NmQyMmUzZDBlM2NlMzU2MjY1NWI3ZTE5MWQ0ZmZhM2Y5Y2JiMzVjOGEzNGUxY2RhOWM3Y2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.sT_NaA2rjNwzHZbE0AzuThmQAmjjoHsjR6jOYrv5c8Y',
+    link: 'https://github.com/nathannlu/ComfyUI-Cloud',
+  },
+  { 
     title: 'My own programming language',
     subtitle: '',
     description: 'Recursive descent parser, compiler, and stack-based virtual machine',

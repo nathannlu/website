@@ -87,17 +87,28 @@ export default function Home() {
           </h2>
 
           <ProjectCard 
-            key={projectsData[0].title}
+            key={"Durable"}
             href={projectsData[0].link}
             video={projectsData[0].video} 
             src={projectsData[0].src} 
             backupSrc={projectsData[0].backupSrc} 
+            title={"Researching AI at Vancouver's fastest growing startup"} 
+            description={"Positional stock image generation, implementing AI at scale, and researching models for 2mil+ websites"} 
+            subtitle={"Durable, the AI Website Builder"} 
+          />
+          <ProjectCard 
+            key={projectsData[1].title}
+            href={projectsData[1].link}
+            video={projectsData[1].video} 
+            src={projectsData[1].src} 
+            backupSrc={projectsData[1].backupSrc} 
             title={"Launching over 20,000+ NFT collections"} 
             description={"I led a team of 5 developers and worked with some of the largest NFT collections in the world."} 
             subtitle={"Ambition NFT launchpad"} 
           />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projectsData.slice(1,3).map((project, i) => (
+            {projectsData.slice(2,4).map((project, i) => (
               <ProjectCard 
                 key={project.title}
                 href={project.link}

@@ -21,6 +21,13 @@ const projectsData = [
 
 const projectsData = [
   { 
+    title: 'Durable',
+    subtitle: 'AI website builder',
+    description: 'Led a team of 5 to help over 20,000 creators launch their NFTs',
+    src: '/static/images/durable_preview.jpeg',
+    link: 'https://durable.co',
+  },
+  { 
     title: 'Ambition',
     subtitle: 'NFT maker',
     description: 'Led a team of 5 to help over 20,000 creators launch their NFTs',
@@ -43,6 +50,13 @@ const projectsData = [
     description: "Designing and developing for one of Vancouver's largest short-term rental management firm",
     src: '/static/images/hg_preview.png',
     link: '/work/hostgenius',
+  },
+  { 
+    title: 'iMintify',
+    subtitle: 'NFT platform',
+    description: "Web3 platform for launching NFTs, marketplaces, and more",
+    src: '/static/images/ambition_preview.png',
+    link: 'https://imintify.com',
   },
   { 
     title: 'Castle Labs',
